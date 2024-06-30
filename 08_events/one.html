@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <h2>images</h2>
+    <ul id="images">
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/21637529/pexels-photo-21637529/free-photo-of-girl-standing-and-leaning-on-tree-in-forest.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="photoshop"  ></li>
+        <!-- onclick="alert('photoshop clicked')" -->
+        <li><img width="200px" id="map" src="https://images.pexels.com/photos/20321168/pexels-photo-20321168/free-photo-of-couple-checking-a-map.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" alt="map" ></li>
+
+        <li><img width="200px" id="kea-bird" src="https://images.pexels.com/photos/26050321/pexels-photo-26050321/free-photo-of-kea-bird-the-kea-is-a-protected-species-that-lives-in-forests-and-mountainous-areas-across-the-south-island-from-golden-bay-to-fiordland-in-new-zealand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="kea-bird" ></li>
+
+        <li><img width="200px" id="seal" src="https://images.pexels.com/photos/26221500/pexels-photo-26221500/free-photo-of-a-seal-swimming-in-the-water-with-its-head-sticking-out.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="seal" ></li>
+        
+        <li><a style="color: aliceblue;" href="https://images.pexels.com/photos/20544745/pexels-photo-20544745/free-photo-of-africa-on-globe.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" id="google">Link</a></li>
+    </ul>
+    
+</body>
+<script>
+    // document.querySelector('#photoshop').onclick = function(){
+    //     alert('photoshop clicked again')
+    // }
+
+    // document.querySelector('#photoshop').addEventListener('click',function(e){
+    //     console.log(e);
+    // },false)            // third parameter is event propogation called bubbling, false for inside (child) to outside (parent) node,true for outside to inside
+    
+    //type-mouse keybord ,timestamp , defaultPrevented
+    // target , toElement ,srcElement , currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlKey, shiftKey, keyCode
+
+    
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //     console.log(`clicked inside ul`);
+    // },false) 
+    // document.querySelector('#photoshop').addEventListener('click',function(e){
+    //     console.log(`clicked photoshop`);
+    //     e.stopPropagation()
+    // },false) 
+
+    // document.querySelector('#google').addEventListener('click',function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log('google clicked');
+    // },false)
+
+    document.querySelector('#images').addEventListener('click',function(e){
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        console.log(e.target.id);
+
+        if(e.target.tagName === 'IMG'){
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            // removeIt.parentNode.removeChild(removeIt)
+        }
+
+    },false)
+</script>
+</html>

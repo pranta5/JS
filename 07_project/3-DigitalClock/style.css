@@ -1,0 +1,40 @@
+
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px #aaa;
+    padding: .5rem;
+    gap: .5rem;
+    background-color: #eee;
+}
+
+nav a{
+    display: inline-block;
+    min-width: 9rem;
+    border: 1px solid black;
+    padding: .5rem;
+    border-radius: .2rem;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.center{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#banner{
+    font-size: medium;
+}
+#clock{
+        font-size: 40px;
+        background-color: orange;
+        padding: 20px 50px;
+        margin-top: 10px;
+        border-radius: 10px;
+}
