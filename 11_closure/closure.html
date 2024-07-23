@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>clousre</h1>
+</body>
+<script>
+
+            // lexical scoping        
+
+    //Inner functions have access to variables declared in their outer functions.
+
+    // function outer(){
+    //     let username= 'pranta'
+    //     function inner(){
+    //         console.log(username);  // inner function have access to the variable of outer function .
+    //     }
+    //     inner()
+    // }
+    // outer()
+
+                //clouser
+
+    // A closure is a function that captures the variables from its enclosing scope. Here, display captures name from myfunc's scope.
+    
+    function myfunc(){
+        const name = 'pranta'
+        function display(){
+            console.log(name);
+        }
+        return display
+    }
+    const func = myfunc()   // myfunc() return dispaly function
+    func()   // call the returned display function
+
+
+
+</script>
+</html>
